@@ -48,7 +48,7 @@ Follow the installation guide according to your operating system (Windows, macOS
 psql -U postgres
 -- Enter the password, e.g., admin
 CREATE DATABASE face_recognition;
-\c face_recognition
+\q
 ```
 
 The required table will be created automatically on the first run.
@@ -67,7 +67,19 @@ The app will be accessible at: `http://localhost:8000`
 
 ## API Endpoints
 
-Open a new Command Prompt, Terminal, or Bash window, and run the following command to use the application endpoint.
+Open a new Command Prompt, Terminal, or Bash window, and go to the Face-Recognition-API directory
+
+```bash
+cd Face-Recognition-API
+```
+
+Activate Virtual Enviroment again:
+
+```bash
+source venv/bin/activate  # For Linux/macOS
+venv\Scripts\activate     # For Windows
+```
+Run the following command to use the application endpoint.
 
 ### 1. **[GET]** `/api/face`
 
@@ -75,6 +87,12 @@ Get a list of all registered faces in the database.
 
 ```bash
 curl http://localhost:8000/api/face
+```
+
+Example Output:
+
+```bash
+[{"id":1,"name":"Aaron Eckhart"},{"id":2,"name":"Dasha Taran"}]
 ```
 
 ### 2. **[POST]** `/api/face/register`
@@ -94,7 +112,7 @@ curl -X POST "http://localhost:8000/api/face/register" -F "file=@Aaron Eckhart.j
 Example Output:
 
 ```bash
-[{"id":1,"name":"Aaron Eckhart"},{"id":2,"name":"Dasha Taran"}]
+{"message":"Face from Aaron Eckhart.jpg registered."}
 ```
 
 ### 3. **[POST]** `/api/face/recognize`
@@ -124,10 +142,10 @@ Delete a face from the database by its ID.
 ```bash
 curl -X DELETE http://localhost:8000/api/face/<id>
 ```
-Example i want delete id=2:
+Example delete id=1:
 
 ```bash
-curl -X DELETE http://localhost:8000/api/face/2
+curl -X DELETE http://localhost:8000/api/face/1
 ```
 
 Example Output:
@@ -190,6 +208,7 @@ docker run -p 8000:8000 face-recognition-api
 ## Contact
 
 If you have any questions or need further assistance, feel free to contact me directly at:
+
 Email: putra.alfarizi555@gmail.com
 
 ---
