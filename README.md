@@ -160,13 +160,16 @@ Example Output:
 
 ```
 .
-├── main.py                # FastAPI application
-├── face_services.py       # Detection, embedding, and database logic
-├── uploads/               # Temporary upload folder
-├── faces/                 # Cropped face image storage
-├── requirements.txt       # Dependencies list
-├── README.md              # This documentation
-├── .gitignore             # Git ignore rules (e.g., venv, pycache, etc.)
+├── main.py                   # FastAPI application
+├── face_services.py          # Detection, embedding, and database logic
+├── uploads/                  # Temporary upload folder for incoming images
+├── faces/                    # Cropped and identified face images
+├── face_detection_yunet_2023mar.onnx  # ONNX model for face detection (YuNet)
+├── Aaron Eckhart.jpg         # Sample image for testing
+├── Dasha Taran.jpeg          # Sample image for testing
+├── requirements.txt          # List of Python dependencies
+├── README.md                 # Project documentation
+├── .gitignore                # Git ignore rules (e.g., venv, __pycache__, etc.)
 ```
 
 ---
