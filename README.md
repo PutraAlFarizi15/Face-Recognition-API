@@ -104,6 +104,13 @@ curl http://localhost:8000/api/face
 
 Example Output:
 
+No data in the database yet
+
+```bash
+[]
+```
+Already data in the database
+
 ```bash
 [{"id":1,"name":"Aaron Eckhart"},{"id":2,"name":"Dasha Taran"}]
 ```
