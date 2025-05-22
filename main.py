@@ -27,14 +27,14 @@ def register(file: UploadFile = File(...)):
         register_face(temp_path)
         return {"message": f"Face from {file.filename} registered."}
     except ValueError as ve:
-        # Khusus untuk kasus tidak ada wajah
+        # Special for the case of no face
         raise HTTPException(status_code=400, detail=str(ve))
     except Exception as e:
-        # Kasus error umum lainnya
+        # Other common error cases
         raise HTTPException(status_code=500, detail=str(e))
     finally:
         if os.path.exists(temp_path):
-            os.remove(temp_path)  # Hapus setelah dipakai
+            os.remove(temp_path)  # # Delete after use
 
 @app.post("/api/face/recognize")
 def recognize(file: UploadFile = File(...)):
@@ -51,12 +51,14 @@ def recognize(file: UploadFile = File(...)):
         raise HTTPException(status_code=500, detail=str(e))
     finally:
         if os.path.exists(temp_path):
-            os.remove(temp_path)  # Hapus setelah dipakai
+            os.remove(temp_path) 
 
 @app.delete("/api/face/{face_id}")
 def delete_face(face_id: int):
     try:
         delete_face_by_id(face_id)
         return {"message": f"Face ID {face_id} deleted."}
+    except HTTPException as http_exc:
+        raise http_exc
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
