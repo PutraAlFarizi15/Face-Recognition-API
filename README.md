@@ -151,7 +151,7 @@ curl -X DELETE http://localhost:8000/api/face/1
 Example Output:
 
 ```bash
-{"message":"Face ID 2 deleted."}
+{"message":"Face ID 1 deleted."}
 ```
 
 ---
