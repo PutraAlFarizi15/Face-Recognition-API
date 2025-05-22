@@ -1,6 +1,7 @@
 # Face Recognition API
 
-A Deep Learning-based Face Recognition System using FastAPI, FaceNet (`facenet-pytorch`), YuNet (ONNX), and PostgreSQL for face detection, feature extraction, face matching, and database management.
+A Deep Learning-based Face Recognition System using FastAPI, OpenCV, PyTorch, FaceNet (`facenet-pytorch`), YuNet (ONNX), and PostgreSQL for face detection, feature extraction, face matching, and database management.
+
 
 ## Features
 
@@ -9,6 +10,18 @@ A Deep Learning-based Face Recognition System using FastAPI, FaceNet (`facenet-p
 - Face matching via cosine similarity.
 - REST API for face registration, recognition, deletion, and listing.
 - Storage of face features and associated files in PostgreSQL.
+
+---
+
+## Used Libraries
+
+| Library           | Description |
+|------------------|-------------|
+| **OpenCV**        | Used for image reading, face detection (via YuNet), and cropping detected faces. |
+| **PyTorch**       | Framework for deep learning used to run the FaceNet model. |
+| **facenet-pytorch** | Provides a pre-trained FaceNet model for feature extraction. |
+| **FastAPI**       | Web framework for building REST APIs quickly and efficiently. |
+| **psycopg2**      | PostgreSQL adapter for Python to handle face data storage. |
 
 ---
 
@@ -73,7 +86,7 @@ Open a new Command Prompt, Terminal, or Bash window, and go to the Face-Recognit
 cd Face-Recognition-API
 ```
 
-Activate Virtual Enviroment again:
+Activate Virtual Environment again:
 
 ```bash
 source venv/bin/activate  # For Linux/macOS
@@ -189,6 +202,5 @@ If you have any questions or need further assistance, feel free to contact me di
 Email: putra.alfarizi555@gmail.com
 
 ---
-
 
 ![License](https://img.shields.io/badge/license-MIT-green)
